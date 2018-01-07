@@ -38,8 +38,10 @@ class ApplicationController < Sinatra::Base
     binding.pry
      @recipe = Recipe.find_by_id(params[:id])
      @recipe.name = params[:name]
+     binding.pry
      @recipe.ingredients = params[:ingredients]
      @recipe.cook_time = params[:cook_time]
+     binding.pry
      @recipe.save
      redirect to "/recipes/#{@recipe.id}"
    end
